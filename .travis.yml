@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+  
+
+before_install:
+  - docker build -t umachana/dockerreact -f Dockerfile.dev .
+
+script:
+  - docker run umachana/dockerreact npm run test -- --coverage
