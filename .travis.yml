@@ -7,4 +7,4 @@ before_install:
   - docker build -t umachana/dockerreact -f Dockerfile.dev .
 
 script:
-  - docker run umachana/dockerreact npm run test -- --coverage
+  - docker run -e CI=true umachana/dockerreact npm run test
